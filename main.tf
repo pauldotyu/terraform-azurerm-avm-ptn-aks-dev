@@ -10,7 +10,7 @@ resource "azurerm_container_registry" "this" {
   location            = var.location
   name                = coalesce(var.container_registry_name, "cr${random_string.acr_suffix.result}")
   resource_group_name = var.resource_group_name
-  sku                 = "Premium"
+  sku                 = var.container_registry_sku != null ? var.container_registry_sku : "Premium"
   tags                = var.tags
 }
 
