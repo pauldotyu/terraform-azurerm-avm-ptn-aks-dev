@@ -127,3 +127,9 @@ variable "user_assigned_managed_identity_resource_ids" {
   description = "(Optional) Specifies a list of User Assigned Managed Identity resource IDs to be assigned to this resource."
   nullable    = false
 }
+
+variable "vm_size" {
+  type = string
+  default = "Standard_DS2_v2"
+  description = "(Optional) The VM SKU for the default node pool."
+}
